@@ -5,7 +5,8 @@ use libappindicator::{AppIndicator, AppIndicatorStatus};
 
 fn main() {
 	gtk::init().unwrap();
-	let mut indicator = AppIndicator::new("libappindicator test application", "");
+	let mut indicator =
+		AppIndicator::new("libappindicator test application", "");
 	indicator.set_status(AppIndicatorStatus::Active);
 	let icon_path = Path::new(env!("CARGO_MANIFEST_DIR")).join("examples");
 	indicator.set_icon_theme_path(icon_path.to_str().unwrap());
