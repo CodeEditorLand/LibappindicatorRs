@@ -62,11 +62,7 @@ impl AppIndicator {
 
 	pub fn set_label(&mut self, label:&str, guide:&str) {
 		unsafe {
-			app_indicator_set_label(
-				self.air,
-				label.to_glib_none().0,
-				guide.to_glib_none().0,
-			);
+			app_indicator_set_label(self.air, label.to_glib_none().0, guide.to_glib_none().0);
 		}
 	}
 
@@ -90,11 +86,7 @@ impl AppIndicator {
 
 	pub fn set_icon_full(&mut self, name:&str, desc:&str) {
 		unsafe {
-			app_indicator_set_icon_full(
-				self.air,
-				name.to_glib_none().0,
-				desc.to_glib_none().0,
-			);
+			app_indicator_set_icon_full(self.air, name.to_glib_none().0, desc.to_glib_none().0);
 		}
 	}
 

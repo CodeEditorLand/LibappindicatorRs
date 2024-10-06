@@ -37,21 +37,18 @@ pub static LIB:Lazy<Library> = Lazy::new(|| {
 	// with the correct filename.
 	#[cfg(feature = "backcompat")]
 	{
-		let libayatana_compat =
-			unsafe { Library::new("libayatana-appindicator3.so") };
+		let libayatana_compat = unsafe { Library::new("libayatana-appindicator3.so") };
 		if let Ok(lib) = libayatana_compat {
 			return lib;
 		}
 
-		let libappindicator_compat =
-			unsafe { Library::new("libappindicator3.so") };
+		let libappindicator_compat = unsafe { Library::new("libappindicator3.so") };
 		if let Ok(lib) = libappindicator_compat {
 			return lib;
 		}
 
 		panic!(
-			"Failed to load ayatana-appindicator3 or appindicator3 dynamic \
-			 library\n{}\n{}\n{}\n{}",
+			"Failed to load ayatana-appindicator3 or appindicator3 dynamic library\n{}\n{}\n{}\n{}",
 			libayatana.unwrap_err(),
 			libappindicator.unwrap_err(),
 			libayatana_compat.unwrap_err(),
@@ -60,8 +57,7 @@ pub static LIB:Lazy<Library> = Lazy::new(|| {
 	}
 
 	panic!(
-		"Failed to load ayatana-appindicator3 or appindicator3 dynamic \
-		 library\n{}\n{}",
+		"Failed to load ayatana-appindicator3 or appindicator3 dynamic library\n{}\n{}",
 		libayatana.unwrap_err(),
 		libappindicator.unwrap_err()
 	);
@@ -106,28 +102,14 @@ fn bindgen_test_layout__GSList() {
 		concat!("Alignment of ", stringify!(_GSList))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GSList>())).data as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GSList>())).data as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GSList),
-			"::",
-			stringify!(data)
-		)
+		concat!("Offset of field: ", stringify!(_GSList), "::", stringify!(data))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GSList>())).next as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GSList>())).next as *const _ as usize },
 		8usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GSList),
-			"::",
-			stringify!(next)
-		)
+		concat!("Offset of field: ", stringify!(_GSList), "::", stringify!(next))
 	);
 }
 pub type GType = gsize;
@@ -155,16 +137,9 @@ fn bindgen_test_layout__GTypeClass() {
 		concat!("Alignment of ", stringify!(_GTypeClass))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GTypeClass>())).g_type as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GTypeClass>())).g_type as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GTypeClass),
-			"::",
-			stringify!(g_type)
-		)
+		concat!("Offset of field: ", stringify!(_GTypeClass), "::", stringify!(g_type))
 	);
 }
 /// GTypeInstance:
@@ -188,17 +163,9 @@ fn bindgen_test_layout__GTypeInstance() {
 		concat!("Alignment of ", stringify!(_GTypeInstance))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GTypeInstance>())).g_class as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GTypeInstance>())).g_class as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GTypeInstance),
-			"::",
-			stringify!(g_class)
-		)
+		concat!("Offset of field: ", stringify!(_GTypeInstance), "::", stringify!(g_class))
 	);
 }
 /// GValue:
@@ -244,49 +211,22 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		concat!("Alignment of ", stringify!(_GValue__bindgen_ty_1))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_int as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_int as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GValue__bindgen_ty_1),
-			"::",
-			stringify!(v_int)
-		)
+		concat!("Offset of field: ", stringify!(_GValue__bindgen_ty_1), "::", stringify!(v_int))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_uint as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_uint as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GValue__bindgen_ty_1),
-			"::",
-			stringify!(v_uint)
-		)
+		concat!("Offset of field: ", stringify!(_GValue__bindgen_ty_1), "::", stringify!(v_uint))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_long as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_long as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GValue__bindgen_ty_1),
-			"::",
-			stringify!(v_long)
-		)
+		concat!("Offset of field: ", stringify!(_GValue__bindgen_ty_1), "::", stringify!(v_long))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_ulong
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_ulong as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -296,10 +236,7 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_int64
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_int64 as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -309,10 +246,7 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_uint64
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_uint64 as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -322,10 +256,7 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_float
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_float as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -335,10 +266,7 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_double
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_double as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -348,10 +276,7 @@ fn bindgen_test_layout__GValue__bindgen_ty_1() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_pointer
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue__bindgen_ty_1>())).v_pointer as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -374,28 +299,14 @@ fn bindgen_test_layout__GValue() {
 		concat!("Alignment of ", stringify!(_GValue))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue>())).g_type as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue>())).g_type as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GValue),
-			"::",
-			stringify!(g_type)
-		)
+		concat!("Offset of field: ", stringify!(_GValue), "::", stringify!(g_type))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GValue>())).data as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GValue>())).data as *const _ as usize },
 		8usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GValue),
-			"::",
-			stringify!(data)
-		)
+		concat!("Offset of field: ", stringify!(_GValue), "::", stringify!(data))
 	);
 }
 pub const GParamFlags_G_PARAM_READABLE:GParamFlags = 1;
@@ -483,129 +394,54 @@ fn bindgen_test_layout__GParamSpec() {
 		concat!("Alignment of ", stringify!(_GParamSpec))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).g_type_instance as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).g_type_instance as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(g_type_instance)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(g_type_instance))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).name as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).name as *const _ as usize },
 		8usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(name)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(name))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).flags as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).flags as *const _ as usize },
 		16usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(flags)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(flags))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).value_type as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).value_type as *const _ as usize },
 		24usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(value_type)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(value_type))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).owner_type as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).owner_type as *const _ as usize },
 		32usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(owner_type)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(owner_type))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>()))._nick as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>()))._nick as *const _ as usize },
 		40usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(_nick)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(_nick))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>()))._blurb as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>()))._blurb as *const _ as usize },
 		48usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(_blurb)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(_blurb))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).qdata as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).qdata as *const _ as usize },
 		56usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(qdata)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(qdata))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).ref_count as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).ref_count as *const _ as usize },
 		64usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(ref_count)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(ref_count))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GParamSpec>())).param_id as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GParamSpec>())).param_id as *const _ as usize },
 		68usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GParamSpec),
-			"::",
-			stringify!(param_id)
-		)
+		concat!("Offset of field: ", stringify!(_GParamSpec), "::", stringify!(param_id))
 	);
 }
 pub type GObject = _GObject;
@@ -634,41 +470,19 @@ fn bindgen_test_layout__GObject() {
 		concat!("Alignment of ", stringify!(_GObject))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GObject>())).g_type_instance as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GObject>())).g_type_instance as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GObject),
-			"::",
-			stringify!(g_type_instance)
-		)
+		concat!("Offset of field: ", stringify!(_GObject), "::", stringify!(g_type_instance))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GObject>())).ref_count as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GObject>())).ref_count as *const _ as usize },
 		8usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GObject),
-			"::",
-			stringify!(ref_count)
-		)
+		concat!("Offset of field: ", stringify!(_GObject), "::", stringify!(ref_count))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GObject>())).qdata as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GObject>())).qdata as *const _ as usize },
 		16usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GObject),
-			"::",
-			stringify!(qdata)
-		)
+		concat!("Offset of field: ", stringify!(_GObject), "::", stringify!(qdata))
 	);
 }
 pub const GdkScrollDirection_GDK_SCROLL_UP:GdkScrollDirection = 0;
@@ -710,29 +524,14 @@ fn bindgen_test_layout__GtkWidget() {
 		concat!("Alignment of ", stringify!(_GtkWidget))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkWidget>())).parent_instance as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkWidget>())).parent_instance as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkWidget),
-			"::",
-			stringify!(parent_instance)
-		)
+		concat!("Offset of field: ", stringify!(_GtkWidget), "::", stringify!(parent_instance))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkWidget>())).priv_ as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkWidget>())).priv_ as *const _ as usize },
 		24usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkWidget),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_GtkWidget), "::", stringify!(priv_))
 	);
 }
 #[repr(C)]
@@ -758,29 +557,14 @@ fn bindgen_test_layout__GtkContainer() {
 		concat!("Alignment of ", stringify!(_GtkContainer))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkContainer>())).widget as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkContainer>())).widget as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkContainer),
-			"::",
-			stringify!(widget)
-		)
+		concat!("Offset of field: ", stringify!(_GtkContainer), "::", stringify!(widget))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkContainer>())).priv_ as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkContainer>())).priv_ as *const _ as usize },
 		32usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkContainer),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_GtkContainer), "::", stringify!(priv_))
 	);
 }
 #[repr(C)]
@@ -806,29 +590,14 @@ fn bindgen_test_layout__GtkMenuShell() {
 		concat!("Alignment of ", stringify!(_GtkMenuShell))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkMenuShell>())).container as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkMenuShell>())).container as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkMenuShell),
-			"::",
-			stringify!(container)
-		)
+		concat!("Offset of field: ", stringify!(_GtkMenuShell), "::", stringify!(container))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkMenuShell>())).priv_ as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkMenuShell>())).priv_ as *const _ as usize },
 		40usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkMenuShell),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_GtkMenuShell), "::", stringify!(priv_))
 	);
 }
 #[repr(C)]
@@ -854,28 +623,14 @@ fn bindgen_test_layout__GtkMenu() {
 		concat!("Alignment of ", stringify!(_GtkMenu))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkMenu>())).menu_shell as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkMenu>())).menu_shell as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkMenu),
-			"::",
-			stringify!(menu_shell)
-		)
+		concat!("Offset of field: ", stringify!(_GtkMenu), "::", stringify!(menu_shell))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkMenu>())).priv_ as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkMenu>())).priv_ as *const _ as usize },
 		48usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkMenu),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_GtkMenu), "::", stringify!(priv_))
 	);
 }
 #[repr(C)]
@@ -902,10 +657,7 @@ fn bindgen_test_layout__GtkStatusIcon() {
 		concat!("Alignment of ", stringify!(_GtkStatusIcon))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkStatusIcon>())).parent_instance
-				as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkStatusIcon>())).parent_instance as *const _ as usize },
 		0usize,
 		concat!(
 			"Offset of field: ",
@@ -915,29 +667,16 @@ fn bindgen_test_layout__GtkStatusIcon() {
 		)
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_GtkStatusIcon>())).priv_ as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_GtkStatusIcon>())).priv_ as *const _ as usize },
 		24usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_GtkStatusIcon),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_GtkStatusIcon), "::", stringify!(priv_))
 	);
 }
-pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_APPLICATION_STATUS:
-	AppIndicatorCategory = 0;
-pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_COMMUNICATIONS:
-	AppIndicatorCategory = 1;
-pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_SYSTEM_SERVICES:
-	AppIndicatorCategory = 2;
-pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_HARDWARE:
-	AppIndicatorCategory = 3;
-pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_OTHER:
-	AppIndicatorCategory = 4;
+pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_APPLICATION_STATUS:AppIndicatorCategory = 0;
+pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_COMMUNICATIONS:AppIndicatorCategory = 1;
+pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_SYSTEM_SERVICES:AppIndicatorCategory = 2;
+pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_HARDWARE:AppIndicatorCategory = 3;
+pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_OTHER:AppIndicatorCategory = 4;
 /// AppIndicatorCategory:
 /// @APP_INDICATOR_CATEGORY_APPLICATION_STATUS: The indicator is used to display
 /// the status of the application.
@@ -953,11 +692,9 @@ pub const AppIndicatorCategory_APP_INDICATOR_CATEGORY_OTHER:
 /// The category provides grouping for the indicators so that
 /// users can find indicators that are similar together.
 pub type AppIndicatorCategory = u32;
-pub const AppIndicatorStatus_APP_INDICATOR_STATUS_PASSIVE:AppIndicatorStatus =
-	0;
+pub const AppIndicatorStatus_APP_INDICATOR_STATUS_PASSIVE:AppIndicatorStatus = 0;
 pub const AppIndicatorStatus_APP_INDICATOR_STATUS_ACTIVE:AppIndicatorStatus = 1;
-pub const AppIndicatorStatus_APP_INDICATOR_STATUS_ATTENTION:AppIndicatorStatus =
-	2;
+pub const AppIndicatorStatus_APP_INDICATOR_STATUS_ATTENTION:AppIndicatorStatus = 2;
 /// AppIndicatorStatus:
 /// @APP_INDICATOR_STATUS_PASSIVE: The indicator should not be shown to the
 /// user.
@@ -1007,39 +744,21 @@ fn bindgen_test_layout__AppIndicator() {
 		concat!("Alignment of ", stringify!(_AppIndicator))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_AppIndicator>())).parent as *const _
-				as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_AppIndicator>())).parent as *const _ as usize },
 		0usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_AppIndicator),
-			"::",
-			stringify!(parent)
-		)
+		concat!("Offset of field: ", stringify!(_AppIndicator), "::", stringify!(parent))
 	);
 	assert_eq!(
-		unsafe {
-			&(*(::std::ptr::null::<_AppIndicator>())).priv_ as *const _ as usize
-		},
+		unsafe { &(*(::std::ptr::null::<_AppIndicator>())).priv_ as *const _ as usize },
 		24usize,
-		concat!(
-			"Offset of field: ",
-			stringify!(_AppIndicator),
-			"::",
-			stringify!(priv_)
-		)
+		concat!("Offset of field: ", stringify!(_AppIndicator), "::", stringify!(priv_))
 	);
 }
 
 pub unsafe fn app_indicator_get_type() -> GType {
-	let f = LIB
-		.get::<unsafe extern fn() -> GType>(b"app_indicator_get_type\0")
-		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
-		);
+	let f = LIB.get::<unsafe extern fn() -> GType>(b"app_indicator_get_type\0").expect(
+		"Can't get the extern function. This shouldn't happen unless the linked library is wrong.",
+	);
 	f()
 }
 
@@ -1050,14 +769,12 @@ pub unsafe fn app_indicator_new(
 	category:AppIndicatorCategory,
 ) -> *mut AppIndicator {
 	let f = LIB
-		.get::<unsafe extern fn(
-			*const gchar,
-			*const gchar,
-			AppIndicatorCategory,
-		) -> *mut AppIndicator>(b"app_indicator_new\0")
+		.get::<unsafe extern fn(*const gchar, *const gchar, AppIndicatorCategory) -> *mut AppIndicator>(
+			b"app_indicator_new\0",
+		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(id, icon_name, category)
 }
@@ -1076,38 +793,32 @@ pub unsafe fn app_indicator_new_with_path(
 			*const gchar,
 		) -> *mut AppIndicator>(b"app_indicator_new_with_path\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(id, icon_name, category, icon_theme_path)
 }
 
-pub unsafe fn app_indicator_set_status(
-	self_:*mut AppIndicator,
-	status:AppIndicatorStatus,
-) {
+pub unsafe fn app_indicator_set_status(self_:*mut AppIndicator, status:AppIndicatorStatus) {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator, AppIndicatorStatus)>(
 			b"app_indicator_set_status\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, status)
 }
 
-pub unsafe fn app_indicator_set_attention_icon(
-	self_:*mut AppIndicator,
-	icon_name:*const gchar,
-) {
+pub unsafe fn app_indicator_set_attention_icon(self_:*mut AppIndicator, icon_name:*const gchar) {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator, *const gchar)>(
 			b"app_indicator_set_attention_icon\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, icon_name)
 }
@@ -1122,38 +833,28 @@ pub unsafe fn app_indicator_set_attention_icon_full(
 			b"app_indicator_set_attention_icon_full\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, icon_name, icon_desc)
 }
 
-pub unsafe fn app_indicator_set_menu(
-	self_:*mut AppIndicator,
-	menu:*mut GtkMenu,
-) {
+pub unsafe fn app_indicator_set_menu(self_:*mut AppIndicator, menu:*mut GtkMenu) {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator, *mut GtkMenu)>(
-			b"app_indicator_set_menu\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator, *mut GtkMenu)>(b"app_indicator_set_menu\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, menu)
 }
 
-pub unsafe fn app_indicator_set_icon(
-	self_:*mut AppIndicator,
-	icon_name:*const gchar,
-) {
+pub unsafe fn app_indicator_set_icon(self_:*mut AppIndicator, icon_name:*const gchar) {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator, *const gchar)>(
-			b"app_indicator_set_icon\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator, *const gchar)>(b"app_indicator_set_icon\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, icon_name)
 }
@@ -1167,8 +868,8 @@ pub unsafe fn app_indicator_set_icon_full(
 			b"app_indicator_set_icon_full\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, icon_name, icon_desc)
 }
@@ -1183,8 +884,8 @@ pub unsafe fn app_indicator_set_label(
 			b"app_indicator_set_label\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, label, guide)
 }
@@ -1198,23 +899,18 @@ pub unsafe fn app_indicator_set_icon_theme_path(
 			b"app_indicator_set_icon_theme_path\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, icon_theme_path)
 }
 
-pub unsafe fn app_indicator_set_ordering_index(
-	self_:*mut AppIndicator,
-	ordering_index:guint32,
-) {
+pub unsafe fn app_indicator_set_ordering_index(self_:*mut AppIndicator, ordering_index:guint32) {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator, guint32)>(
-			b"app_indicator_set_ordering_index\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator, guint32)>(b"app_indicator_set_ordering_index\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, ordering_index)
 }
@@ -1228,195 +924,164 @@ pub unsafe fn app_indicator_set_secondary_activate_target(
 			b"app_indicator_set_secondary_activate_target\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, menuitem)
 }
 
-pub unsafe fn app_indicator_set_title(
-	self_:*mut AppIndicator,
-	title:*const gchar,
-) {
+pub unsafe fn app_indicator_set_title(self_:*mut AppIndicator, title:*const gchar) {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator, *const gchar)>(
-			b"app_indicator_set_title\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator, *const gchar)>(b"app_indicator_set_title\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, title)
 }
 
 pub unsafe fn app_indicator_get_id(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
-			b"app_indicator_get_id\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(b"app_indicator_get_id\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_category(
-	self_:*mut AppIndicator,
-) -> AppIndicatorCategory {
+pub unsafe fn app_indicator_get_category(self_:*mut AppIndicator) -> AppIndicatorCategory {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> AppIndicatorCategory>(
 			b"app_indicator_get_category\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_status(
-	self_:*mut AppIndicator,
-) -> AppIndicatorStatus {
+pub unsafe fn app_indicator_get_status(self_:*mut AppIndicator) -> AppIndicatorStatus {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> AppIndicatorStatus>(
 			b"app_indicator_get_status\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
 pub unsafe fn app_indicator_get_icon(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
-			b"app_indicator_get_icon\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(b"app_indicator_get_icon\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_icon_desc(
-	self_:*mut AppIndicator,
-) -> *const gchar {
+pub unsafe fn app_indicator_get_icon_desc(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
 			b"app_indicator_get_icon_desc\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_icon_theme_path(
-	self_:*mut AppIndicator,
-) -> *const gchar {
+pub unsafe fn app_indicator_get_icon_theme_path(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
 			b"app_indicator_get_icon_theme_path\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_attention_icon(
-	self_:*mut AppIndicator,
-) -> *const gchar {
+pub unsafe fn app_indicator_get_attention_icon(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
 			b"app_indicator_get_attention_icon\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_attention_icon_desc(
-	self_:*mut AppIndicator,
-) -> *const gchar {
+pub unsafe fn app_indicator_get_attention_icon_desc(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
 			b"app_indicator_get_attention_icon_desc\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
 pub unsafe fn app_indicator_get_title(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
-			b"app_indicator_get_title\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(b"app_indicator_get_title\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
 pub unsafe fn app_indicator_get_menu(self_:*mut AppIndicator) -> *mut GtkMenu {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator) -> *mut GtkMenu>(
-			b"app_indicator_get_menu\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator) -> *mut GtkMenu>(b"app_indicator_get_menu\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
 pub unsafe fn app_indicator_get_label(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
-		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
-			b"app_indicator_get_label\0",
-		)
+		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(b"app_indicator_get_label\0")
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_label_guide(
-	self_:*mut AppIndicator,
-) -> *const gchar {
+pub unsafe fn app_indicator_get_label_guide(self_:*mut AppIndicator) -> *const gchar {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> *const gchar>(
 			b"app_indicator_get_label_guide\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
 
-pub unsafe fn app_indicator_get_ordering_index(
-	self_:*mut AppIndicator,
-) -> guint32 {
+pub unsafe fn app_indicator_get_ordering_index(self_:*mut AppIndicator) -> guint32 {
 	let f = LIB
 		.get::<unsafe extern fn(*mut AppIndicator) -> guint32>(
 			b"app_indicator_get_ordering_index\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
@@ -1429,8 +1094,8 @@ pub unsafe fn app_indicator_get_secondary_activate_target(
 			b"app_indicator_get_secondary_activate_target\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_)
 }
@@ -1445,8 +1110,8 @@ pub unsafe fn app_indicator_build_menu_from_desktop(
 			b"app_indicator_build_menu_from_desktop\0",
 		)
 		.expect(
-			"Can't get the extern function. This shouldn't happen unless the \
-			 linked library is wrong.",
+			"Can't get the extern function. This shouldn't happen unless the linked library is \
+			 wrong.",
 		);
 	f(self_, desktop_file, desktop_profile)
 }
