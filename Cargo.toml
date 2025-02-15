@@ -1,16 +1,19 @@
-[package]
-name = "libappindicator"
-version = "0.9.0"
-description = "Rust safe bindings for libappindicator"
-edition = "2021"
-license-file = "LICENSE"
-keywords = ["linux", "gui", "gtk"]
-
 [dependencies]
-log = { version = "0.4" }
 gtk = { version = "0.18" }
 libappindicator-sys = { version = "0.9", path = "sys/" }
+log = { version = "0.4" }
 
 [features]
-default = ["backcompat"]
 backcompat = ["libappindicator-sys/backcompat"]
+default = ["backcompat"]
+
+[lib]
+path = "Source/lib.rs"
+
+[package]
+description = "Rust safe bindings for libappindicator"
+edition = "2021"
+keywords = ["linux", "gui", "gtk"]
+license-file = "LICENSE"
+name = "libappindicator"
+version = "0.9.0"
