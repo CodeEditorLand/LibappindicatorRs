@@ -12,7 +12,7 @@ path = "Source/lib.rs"
 
 [package]
 description = "Rust safe bindings for libappindicator"
-edition = "2021"
+edition = "2024"
 keywords = ["linux", "gui", "gtk"]
 license-file = "LICENSE"
 name = "libappindicator"
